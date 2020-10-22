@@ -1,4 +1,3 @@
-
 package edu.eci.arsw.weather.controllers;
 
 import com.mashape.unirest.http.exceptions.UnirestException;

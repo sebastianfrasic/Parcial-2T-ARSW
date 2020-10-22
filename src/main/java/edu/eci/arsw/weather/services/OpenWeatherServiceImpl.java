@@ -1,6 +1,7 @@
 package edu.eci.arsw.weather.services;
 
 
+import edu.eci.arsw.weather.model.Weather;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,7 +17,7 @@ public class OpenWeatherServiceImpl implements OpenWeatherServices {
 
 
     @Override
-    public String getWeatherOfACity(String nombre) throws OpenWeatherServiceException {
+    public Weather getWeatherOfACity(String nombre) throws OpenWeatherServiceException {
         try {
             return httpConnectionService.getWeatherOfACity(nombre);
         } catch (OpenWeatherServiceException e) {

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open Weather</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+
+
+<body>
+<div class="container">
+    <h2>Welcome to Open Weather!</h2>
+    <h4>Here you can find out about the weather of a city</h4>
+    <br>
+    <p>
+        <input id="airport" type="text" placeholder="City name">
+        <button type="button" class="btn btn-primary">Search</button>
+    </p>
+    <table class="table table-striped">
+        <thread class="thead-dark">
+            <tr>
+                <th scope="col">Country code</th>
+                <th scope="col">City</th>
+                <th scope="col">Weather</th>
+                <th scope="col">Description</th>
+                <th scope="col">Temperature (°C)</th>
+                <th scope="col">Thermal sensation (°C)</th>
+            </tr>
+        </thread>
+        <tbody id="filasAeropuerto">
+        <tr>
+            <td>GB</td>
+            <td>London</td>
+            <td>Clouds</td>
+            <td>few clouds</td>
+            <td>286.97</td>
+            <td>285.47</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div id="map"></div>
+</div>
+</body>
+
+<footer class="text-center">
+    <br/>
+    Made by <strong> Juan Sebastián Frásica Galeano </strong>
+</footer>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="/app.js"></script>
+<script src="/map.js"></script>
+
+</html>
