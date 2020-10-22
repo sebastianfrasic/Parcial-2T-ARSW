@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 
 
@@ -40,7 +41,7 @@ public class OpenWeatherServiceImpl implements OpenWeatherServices {
                 weather.setLocalDateTime(LocalDateTime.now());
                 cacheInterface.putOnCache(weather);
             }
-        } catch (OpenWeatherServiceException | OpenWeatherPersistenceException e) {
+        } catch (OpenWeatherServiceException | OpenWeatherPersistenceException | UnsupportedEncodingException e) {
             throw new OpenWeatherServiceException(e.getMessage(), e);
         }
         return weather;
