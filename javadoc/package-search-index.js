@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"edu.eci.arsw.weather"},{"l":"edu.eci.arsw.weather.controllers"},{"l":"edu.eci.arsw.weather.model"},{"l":"edu.eci.arsw.weather.persistence"},{"l":"edu.eci.arsw.weather.services"}];updateSearchResults();

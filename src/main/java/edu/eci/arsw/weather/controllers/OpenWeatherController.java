@@ -21,7 +21,11 @@ public class OpenWeatherController {
     @Qualifier("openWeatherServices")
     private OpenWeatherServices openWeatherServices;
 
-
+    /**
+     * Obtiene los datos climáticos de una ciudad del mundo
+     * @param nombre de la ciudad
+     * @return Un JSON con el código del país, ciudad, clima, descripción, temperatura, sensación térmica, latitud, longitud y LocalDateTime de la consulta
+     */
     @GetMapping("/{nombre}")
     public ResponseEntity<?> getWeatherOfACity(@PathVariable String nombre) {
         try {

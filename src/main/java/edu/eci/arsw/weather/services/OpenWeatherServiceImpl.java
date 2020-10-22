@@ -22,7 +22,13 @@ public class OpenWeatherServiceImpl implements OpenWeatherServices {
     @Qualifier("openWeatherCache")
     CacheInterface cacheInterface;
 
-
+    /**
+     * Obtiene los datos del clima de una ciudad. Cuando se consulta una ciudad, esta permanece en caché durante 5 minutos. Al pasar 5 minutos se elimina del caché. Si la ciudad no está en caché se consulta directamente del API de Open Weather
+     *
+     * @param nombre La ciudad
+     * @return los datos del clima de la ciudad
+     * @throws OpenWeatherServiceException Si ocurre un error con la conexión con el API externo o si ocurre algo con el caché
+     */
     @Override
     public Weather getWeatherOfACity(String nombre) throws OpenWeatherServiceException {
         Weather weather;

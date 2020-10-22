@@ -3,6 +3,9 @@ package edu.eci.arsw.weather.model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * Clase que representa los datos del clima de una ciudad
+ */
 public class Weather {
 
     private String countryCode;

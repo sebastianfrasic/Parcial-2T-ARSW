@@ -11,6 +11,12 @@ import org.springframework.stereotype.Service;
 @Service("connection")
 public class HttpConnectionService {
 
+    /**
+     * Realiza conexión mediante Unirest al API de OpenWeather
+     * @param nombre de la ciudad
+     * @return Los datos climáticos filtrados de una ciudad
+     * @throws OpenWeatherServiceException Si la ciudad no existe o si hay un error de conexión con el API
+     */
     public Weather getWeatherOfACity(String nombre) throws OpenWeatherServiceException {
         HttpResponse<JsonNode> response;
         try {
@@ -27,6 +33,11 @@ public class HttpConnectionService {
         return getWeather(jsonObject);
     }
 
+    /**
+     * Toma el JSON obtenido del API de Open Weather y crea otro objeto solamente con algunos de esos datos
+     * @param jsonObject JSON del API de Open Weather
+     * @return Objeto filtrado
+     */
     private Weather getWeather(JSONObject jsonObject) {
         String countryCode = jsonObject.getJSONObject("sys").getString("country");
         String city = jsonObject.getString("name");
