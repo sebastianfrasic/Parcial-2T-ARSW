@@ -10,6 +10,9 @@
 Enlace de la aplicación en Heroku:
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://openweather-arsw.herokuapp.com/)
 
+Enlace del repositorio en GitHub:
+[Click aquí](https://github.com/sebastianfrasic/Parcial-2T-ARSW)
+
 ### Pre-requisitos 📋
 
 * Java 8
