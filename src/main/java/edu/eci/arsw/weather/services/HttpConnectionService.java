@@ -8,17 +8,24 @@ import edu.eci.arsw.weather.model.Weather;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
 @Service("connection")
 public class HttpConnectionService {
 
     /**
      * Realiza conexión mediante Unirest al API de OpenWeather
+     *
      * @param nombre de la ciudad
      * @return Los datos climáticos filtrados de una ciudad
      * @throws OpenWeatherServiceException Si la ciudad no existe o si hay un error de conexión con el API
      */
-    public Weather getWeatherOfACity(String nombre) throws OpenWeatherServiceException {
+    public Weather getWeatherOfACity(String nombre) throws OpenWeatherServiceException, UnsupportedEncodingException {
         HttpResponse<JsonNode> response;
+        String encodedQuery = URLEncoder.encode(nombre, StandardCharsets.UTF_8.toString());
+        nombre = encodedQuery.replace("+", "%20");
         try {
             response = Unirest
                     .get("https://api.openweathermap.org/data/2.5/weather?q=" + nombre + "&appid=e6d589177c6d5fbf9467ccb98fab7dfb")
@@ -35,6 +42,7 @@ public class HttpConnectionService {
 
     /**
      * Toma el JSON obtenido del API de Open Weather y crea otro objeto solamente con algunos de esos datos
+     *
      * @param jsonObject JSON del API de Open Weather
      * @return Objeto filtrado
      */
