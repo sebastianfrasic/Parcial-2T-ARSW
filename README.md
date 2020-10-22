@@ -1,5 +1,64 @@
 # Escuela Colombiana de Ingeniería Julio Garavito - Arquitecturas de Software ARSW - Parcial Segundo Tercio
 
+
+## Autor ✒️
+
+* Juan Sebastián Frásica Galeano
+
+## Comenzando 🚀
+
+Enlace de la aplicación en Heroku:
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://openweather-arsw.herokuapp.com/)
+
+### Pre-requisitos 📋
+
+* Java 8
+* Maven (Apache Maven)
+* Git
+
+
+
+### Instalación 🔧
+
+1. Clonar el repositorio
+
+```
+git clone https://github.com/sebastianfrasic/Parcial-2T-ARSW.git
+```
+
+2. En una terminal:
+
+```
+mvn package
+```
+
+
+3. Para ejecutar la aplicación
+
+```
+mvn spring-boot:run
+```
+Para poder utilizar la aplicación de manera local, diríjase a su navegador web de preferencia, y escriba:
+
+```
+localhost:8080
+```
+
+4. Si desea ver la documentación de la aplicación la podrá encontrar en el directorio _javadoc_
+
+
+## Construido con 🛠️
+
+* Java 8
+* Spring Boot Framework
+* JavaScript
+* HTML
+* jQuery
+* Ajax
+* [Maven](https://maven.apache.org/) - Manejador de dependencias
+
+
+
 ## Preparación para el Parcial
 
 Con el objetivo de preparar el examen final del segundo tercio, por favor siga las siguientes instrucciones.
@@ -61,79 +120,4 @@ La arquitectura debe tener las siguientes características.
     * Organizado
     * Javadoc publicado
     * Identifica la función de componentes individuales demuestra conocimiento del funcionamiento general de la arquitectura.
-    
-## Ayuda
-
-* Inicie con la aplicación web basada en spring que le propone Heroku en su guía inicial para java. (https://devcenter.heroku.com/articles/getting-started-with-java)
-* Para invocar un servicios get desde java puede hacerlo de manera fácil con:
-
-```java
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-public class HttpConnectionExample {
-
-    private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=fb&apikey=Q1QZFVJQ21K7C6XM";
-
-    public static void main(String[] args) throws IOException {
-
-        URL obj = new URL(GET_URL);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-        con.setRequestMethod("GET");
-        con.setRequestProperty("User-Agent", USER_AGENT);
-        
-        //The following invocation perform the connection implicitly before getting the code
-        int responseCode = con.getResponseCode();
-        System.out.println("GET Response Code :: " + responseCode);
-        
-        if (responseCode == HttpURLConnection.HTTP_OK) { // success
-            BufferedReader in = new BufferedReader(new InputStreamReader(
-                    con.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-
-            // print result
-            System.out.println(response.toString());
-        } else {
-            System.out.println("GET request not worked");
-        }
-        System.out.println("GET DONE");
-    }
-
-}
-```
-
-*  Parseo de un JSON
-
-```html
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>Create Object from JSON String</h2>
-
-<p id="demo"></p>
-
-<script>
-var txt = '{"name":"John", "age":30, "city":"New York"}'
-var obj = JSON.parse(txt);
-document.getElementById("demo").innerHTML = "name: " + obj.name + ", age: " + obj.age;
-</script>
-
-</body>
-</html>
-
-```
-
-* Código de página con Mapa embebido [(Ver archivo)](index.html)
     
