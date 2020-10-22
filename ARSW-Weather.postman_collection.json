@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "fc7343b3-cef4-44a0-ae3e-c4d09abe5dd5",
+		"name": "ARSW-Weather",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /weather?q={city}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/weather?q=London&appid=f4d50a547866b0ad5622bd2b8d2f7145",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London"
+						},
+						{
+							"key": "appid",
+							"value": "f4d50a547866b0ad5622bd2b8d2f7145"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
